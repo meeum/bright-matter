@@ -27,3 +27,4 @@ node_modules/
 *.sql
 *.sqlite
 .DS_Store
+.htaccess
