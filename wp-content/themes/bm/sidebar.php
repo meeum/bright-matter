@@ -1,4 +1,24 @@
 <!-- sidebar -->
+
+<!--
+
+THIS HAS BEEN REMOVED FROM TEMPLATES- YOU'LL NEED TO ADD BACK IN 
+
+<?php get_sidebar(); ?>
+
+TO GET THIS SUCKER BACK
+
+
+👍
+
+
+-->
+
+
+
+
+
+
 <aside class="sidebar" role="complementary">
 
 	<?php get_template_part( 'searchform' ); ?>
