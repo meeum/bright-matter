@@ -5,7 +5,23 @@
 
 
 // Header container
-.header {}
+.header {
+  
+    position: relative;
+    display: flex; 
+    flex-direction: column-reverse;
+    
+    
+    
+
+
+    @include large {    
+        display: grid;
+    grid-template-columns: 60% 20%;
+    grid-gap: 20%;
+    align-items: center;
+     }
+}
 
 // Logo
 .logo {}

@@ -8,3 +8,16 @@
   padding: 0;
   margin: 0;
 }
+
+
+// media queries - borrowed from https://itnext.io/writing-media-queries-with-sass-mixins-3ea591ea3ea4
+// @mixin mobile {
+//   @media (min-width: 500px) { @content; }
+// }
+// @mixin small {
+//   @media (min-width: 800px) { @content; }
+// }
+@mixin large {
+  @media (min-width: 800px) { @content; }
+}
+
