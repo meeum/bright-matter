@@ -1,5 +1,21 @@
-body {
-    background: green;
-    height: 100vh;
-    color: red;
-}
+/**
+ * styles.scss
+ * ---
+ * Main `sass` file. Import here `sass` files
+ */
+
+// Modules
+@import "css/modules/variables";
+@import "css/modules/mixins";
+@import "css/modules/fonts";
+
+// Partials
+@import "css/partials/reset";
+@import "css/partials/wordpress";
+@import "css/partials/utils";
+@import "css/partials/wrapper";
+@import "css/partials/header";
+@import "css/partials/nav";
+@import "css/partials/sidebar";
+@import "css/partials/footer";
+@import "css/partials/print";
