@@ -2,7 +2,7 @@
 
 	<main role="main" aria-label="Content">
 		<!-- section -->
-		<section>
+		<section class="inner">
 
 		<?php if ( have_posts() ): the_post(); ?>
 

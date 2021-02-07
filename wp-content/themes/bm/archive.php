@@ -2,7 +2,7 @@
 
 	<main role="main" aria-label="Content">
 		<!-- section -->
-		<section>
+		<section class="inner">
 
 			<h1><?php esc_html_e( 'Archives', 'html5blank' ); ?></h1>
 

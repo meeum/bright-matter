@@ -2,7 +2,7 @@
 
 	<main role="main" aria-label="Content">
 		<!-- section -->
-		<section>
+		<section class="inner">
 
 			<h1><?php the_title(); ?></h1>
 

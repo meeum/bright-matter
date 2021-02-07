@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
-	<main role="main" aria-label="Content">
+	<main role="main" aria-label="Content" data-template="page">
 		<!-- section -->
-		<section>
+		<section class="inner">
 
 			<h1><?php the_title(); ?></h1>
 

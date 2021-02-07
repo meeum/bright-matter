@@ -2,7 +2,7 @@
 
 	<main role="main" aria-label="Content">
 		<!-- section -->
-		<section>
+		<section class="inner">
 
 			<!-- article -->
 			<article id="post-404">
