@@ -3,27 +3,25 @@
  * ---
  */
 
-
 // Header container
 .header {
-  
+  .inner {
     position: relative;
-    display: flex; 
+    display: flex;
     flex-direction: column-reverse;
-    
-    
-    
 
-
-    @include large {    
-        display: grid;
-    grid-template-columns: 60% 20%;
-    grid-gap: 20%;
-    align-items: center;
-     }
+    @include large {
+      display: grid;
+      grid-template-columns: 60% 20%;
+      grid-gap: 20%;
+      align-items: center;
+    }
+  }
 }
 
 // Logo
-.logo {}
+.logo {
+}
 
-.logo-img {}
+.logo-img {
+}

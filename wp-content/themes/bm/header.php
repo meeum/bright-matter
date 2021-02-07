@@ -34,11 +34,12 @@
 
 <body <?php body_class(); ?>>
 
-	<!-- wrapper -->
-	<div class="wrapper">
 
-		<!-- header -->
-		<header class="header" role="banner">
+
+	<!-- header -->
+	<header class="header" role="banner">
+
+		<div class="inner">
 
 			<!-- nav -->
 			<nav class="nav" role="navigation">
@@ -53,14 +54,13 @@
 					<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
 					<!-- <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/logo.svg" alt="Logo"
 						class="logo-img"> -->
-						<img src="https://via.placeholder.com/200x100/000/fff?text=logo" alt="Logo"
-						class="logo-img">
-						
+					<img src="https://via.placeholder.com/200x100/000/fff?text=logo" alt="Logo" class="logo-img">
+
 				</a>
 			</div>
 			<!-- /logo -->
 
+		</div>
 
-
-		</header>
-		<!-- /header -->
+	</header>
+	<!-- /header -->
