@@ -10,12 +10,14 @@
 @import "css/modules/fonts";
 
 // Partials
+@import "css/partials/normalize";
 @import "css/partials/reset";
 @import "css/partials/wordpress";
 @import "css/partials/utils";
 @import "css/partials/wrapper";
 @import "css/partials/header";
 @import "css/partials/nav";
+@import "css/partials/header-blurb";
 @import "css/partials/sidebar";
 @import "css/partials/footer";
 @import "css/partials/print";

@@ -4,33 +4,39 @@
  * Menus
  */
 
- .nav-prompt {
-     position: absolute;
-     top: 3%;
-     right: 3%;
+.nav-prompt {
+  position: absolute;
+  top: 3%;
+  right: 3%;
 
-     @include large {
-         display: none;
-     }
- }
+  @include large {
+    display: none;
+  }
+}
 
 .nav {
-    width: 100%
+  width: 100%;
 }
 
 .main-nav {
+  padding: 0;
+  list-style: none;
 
-    padding: 0;
-    list-style: none;
+  @include large {
+    display: flex;
+    justify-content: space-between;
+  }
 
-    @include large {    
-        display: flex;
-        justify-content: space-between;
-    }
+  .current-menu-item {
+      
+  }
 }
 
-.menu {}
+.menu {
+}
 
-.sub-menu {}
+.sub-menu {
+}
 
-.menu-item {}
+.menu-item {
+}

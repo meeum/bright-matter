@@ -22,6 +22,19 @@ $body-bg: #fff;
 $selection-bg: #04A4CC;
 
 
+$link-color: #f00;
+$link-hover-color: #444;
+
+:root {
+    --link-color: green;
+}
+
+.scheme-01 {
+    --text-color: red;
+    --background-color: blue;
+    --link-color: green;
+    --link-hover-color: purple;
+}
 /**
  * Grid
  */

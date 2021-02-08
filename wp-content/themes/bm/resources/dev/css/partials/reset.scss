@@ -36,12 +36,14 @@ img {
 }
 
 a {
-  color: $text-color;
+  // color: $link-color;
+  color: var(--link-color);
   text-decoration: none;
 
   &:focus,
   &:hover {
     text-decoration: underline;
+    color: $link-hover-color;
   }
 
   &:active {}
