@@ -417,21 +417,21 @@ add_shortcode( 'html5_shortcode_demo_2', 'html5_shortcode_demo_2' ); // Place [h
 function create_post_type_html5() {
     register_taxonomy_for_object_type( 'category', 'html5-blank' ); // Register Taxonomies for Category
     register_taxonomy_for_object_type( 'post_tag', 'html5-blank' );
-    register_post_type( 'html5-blank', // Register Custom Post Type
+    register_post_type( 'clients', // Register Custom Post Type
         array(
         'labels'       => array(
-            'name'               => esc_html( 'HTML5 Blank Custom Post', 'html5blank' ), // Rename these to suit
-            'singular_name'      => esc_html( 'HTML5 Blank Custom Post', 'html5blank' ),
+            'name'               => esc_html( 'Clients', 'html5blank' ), // Rename these to suit
+            'singular_name'      => esc_html( 'Clients', 'html5blank' ),
             'add_new'            => esc_html( 'Add New', 'html5blank' ),
-            'add_new_item'       => esc_html( 'Add New HTML5 Blank Custom Post', 'html5blank' ),
+            'add_new_item'       => esc_html( 'Add New client', 'html5blank' ),
             'edit'               => esc_html( 'Edit', 'html5blank' ),
-            'edit_item'          => esc_html( 'Edit HTML5 Blank Custom Post', 'html5blank' ),
-            'new_item'           => esc_html( 'New HTML5 Blank Custom Post', 'html5blank' ),
-            'view'               => esc_html( 'View HTML5 Blank Custom Post', 'html5blank' ),
-            'view_item'          => esc_html( 'View HTML5 Blank Custom Post', 'html5blank' ),
-            'search_items'       => esc_html( 'Search HTML5 Blank Custom Post', 'html5blank' ),
-            'not_found'          => esc_html( 'No HTML5 Blank Custom Posts found', 'html5blank' ),
-            'not_found_in_trash' => esc_html( 'No HTML5 Blank Custom Posts found in Trash', 'html5blank' ),
+            'edit_item'          => esc_html( 'Edit client', 'html5blank' ),
+            'new_item'           => esc_html( 'New client', 'html5blank' ),
+            'view'               => esc_html( 'View client', 'html5blank' ),
+            'view_item'          => esc_html( 'View client', 'html5blank' ),
+            'search_items'       => esc_html( 'Search client', 'html5blank' ),
+            'not_found'          => esc_html( 'No clients found', 'html5blank' ),
+            'not_found_in_trash' => esc_html( 'No clients found in Trash', 'html5blank' ),
         ),
         'public'       => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages

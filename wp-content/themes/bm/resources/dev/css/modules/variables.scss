@@ -26,7 +26,11 @@ $link-color: #f00;
 $link-hover-color: #444;
 
 :root {
-    --link-color: green;
+    --text-color: #222;
+    --background-color: #FFFEF6;
+    --highlight-color: #8CBCC5;
+    --blocks-a: #E9E4A4;
+    --blocks-b: #8CBCC5;
 }
 
 .scheme-01 {
@@ -35,9 +39,16 @@ $link-hover-color: #444;
     --link-color: green;
     --link-hover-color: purple;
 }
+
+
+
+
+
 /**
  * Grid
  */
+
+
 
 $wrapper-width: 1280px;
 

@@ -52,7 +52,7 @@
 			<div class="logo">
 				<a href="<?php echo esc_url( home_url() ); ?>">
 					<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-					<!-- <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/logo.svg" alt="Logo"
+					<!-- <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/resources/img/bright-matter-logo.png" alt="Logo"
 						class="logo-img"> -->
 					<img src="https://via.placeholder.com/200x100/000/fff?text=logo" alt="Logo" class="logo-img">
 
