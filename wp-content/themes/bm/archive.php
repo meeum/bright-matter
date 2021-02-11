@@ -4,9 +4,9 @@
 		<!-- section -->
 		<section class="inner">
 
-			<h1><?php esc_html_e( 'Archives', 'html5blank' ); ?></h1>
+			<h1><?php esc_html_e( 'Clients', 'html5blank' ); ?></h1>
 
-			<?php get_template_part( 'loop' ); ?>
+			<?php get_template_part( 'loop-clients' ); ?>
 
 			<?php get_template_part( 'pagination' ); ?>
 
