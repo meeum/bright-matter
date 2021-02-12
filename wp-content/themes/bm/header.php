@@ -1,5 +1,14 @@
 <!doctype html>
-<html <?php language_attributes(); ?> class="no-js <?php get_template_part( 'partials/colour_scheme' ); ?>">
+
+
+<html <?php language_attributes(); ?> class=" no-js 
+	
+	<?php
+	// load colour scheme if there is one.
+	$colour_scheme = get_field( "page_colour_scheme" );
+	if( $colour_scheme ) {echo $colour_scheme;} 
+
+?>">
 
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">

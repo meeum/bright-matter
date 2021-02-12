@@ -1,7 +1,12 @@
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 	<!-- article -->
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	
+	
+	<?php $colour_scheme = get_field( "post_colour_scheme" )?>
+	
+	
+	<article id="post-<?php the_ID(); ?>" <?php post_class( $colour_scheme ); ?>>
 	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 
 		<!-- post thumbnail -->
