@@ -2,10 +2,10 @@
 
 	<main role="main" aria-label="Content" data-template="page">
 		<!-- section -->
-		<section class="inner">
-
+		<section>
+	<div class="inner">
 			<h1><?php the_title(); ?></h1>
-
+			</div>
 			
 			<?php get_template_part( 'partials/header_blurb' ); ?>
 
@@ -15,14 +15,14 @@
 
 			<!-- article -->
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+			<div class="inner">
 				<?php the_content(); ?>
-
+			</div>
 				<?php //comments_template( '', true ); // Remove if you don't want comments. ?>
 
 				 
 
-				<?php edit_post_link(); ?>
+				<?php //edit_post_link(); ?>
 
 			</article>
 			<!-- /article -->
