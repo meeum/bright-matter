@@ -65,13 +65,11 @@
 
 $query = new WP_Query($args);
 ?>
-		<div class="content">
+		<div class="grid-halves">
 
 			<?php
 if ( $query->have_posts() ) : ?>
 
-			<div class="container">
-				<div class="row">
 					<?php while ( $query->have_posts() ) : $query->the_post();?>
 
 					<?php $colour_scheme = get_field( "post_colour_scheme" )?>
@@ -128,16 +126,9 @@ if ( $query->have_posts() ) : ?>
 						</a>
 					</article>
 					<?php endwhile; ?>
-				</div><!-- row -->
-			</div><!-- ontainer -->
+			
 
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12">
-
-					</div>
-				</div>
-			</div>
+			
 
 			<?php else :?>
 			<?php //get_template_part( 'template-parts/content', 'none' );?>
