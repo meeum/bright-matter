@@ -26,14 +26,27 @@ $link-color: #f00;
 $link-hover-color: #444;
 
 :root {
+
+    // default scheme
     --text-color: #222;
     --background-color: #FFFEF6;
     --highlight-color: #8CBCC5;
-    --blocks-a: #E9E4A4;
-    --blocks-b: #8CBCC5;
+    --primary-a: #E9E4A4;
+    --primary-b: #8CBCC5;
 }
 
 .scheme-01 {
+    //--text-color: red;
+    --background-color: #607C88;
+    --link-color: #E2B098;
+    --link-hover-color: purple;
+
+    --primary-1: #E3DCCD;
+    --primary-2: #E2B098;
+}
+
+
+.scheme-02 {
     --text-color: red;
     --background-color: blue;
     --link-color: green;
