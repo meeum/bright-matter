@@ -8,7 +8,7 @@
 
 			<?php get_template_part( 'partials/header_blurb' ); ?>
 
-			<?php //get_template_part( 'loop' ); ?>
+			<?php get_template_part( 'loop' ); ?>
 
 			<?php get_template_part( 'pagination' ); ?>
 

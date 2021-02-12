@@ -251,9 +251,9 @@ function html5wp_pagination() {
 }
 
 // Create 20 Word Callback for Index page Excerpts, call using html5wp_excerpt('html5wp_index');
-function html5wp_index( $length ) {
-    return 20;
-}
+// function html5wp_index( $length ) {
+//     return 40;
+// }
 
 // Create 40 Word Callback for Custom Post Excerpts, call using html5wp_excerpt('html5wp_custom_post');
 function html5wp_custom_post( $length ) {
@@ -261,20 +261,95 @@ function html5wp_custom_post( $length ) {
 }
 
 // Create the Custom Excerpts callback
-function html5wp_excerpt( $length_callback = '', $more_callback = '' ) {
-    global $post;
-    if ( function_exists( $length_callback ) ) {
-        add_filter( 'excerpt_length', $length_callback );
-    }
-    if ( function_exists( $more_callback ) ) {
-        add_filter( 'excerpt_more', $more_callback );
-    }
-    $output = get_the_excerpt();
-    $output = apply_filters( 'wptexturize', $output );
-    $output = apply_filters( 'convert_chars', $output );
-    $output = '<p>' . $output . '</p>';
-    echo esc_html( $output );
+// function html5wp_excerpt( $length_callback = '', $more_callback = '' ) {
+//     global $post;
+//     if ( function_exists( $length_callback ) ) {
+//         add_filter( 'excerpt_length', $length_callback );
+//     }
+//     // if ( function_exists( $more_callback ) ) {
+//     //     add_filter( 'excerpt_more', $more_callback );
+//     // }
+//     $output = get_the_excerpt();
+//     $output = apply_filters( 'wptexturize', $output );
+//     $output = apply_filters( 'convert_chars', $output );
+//     //$output = '<p>' . $output . '</p>';
+//     //echo esc_html( $output );
+//     echo $output;
+// }
+
+
+
+
+
+
+////// add tags back into excerpt https://wpwhatnot.com/allow-html-excerpts/
+
+function lt_html_excerpt( $text = '', $post = null ) {
+	$raw_excerpt = $text;
+
+	if ( '' === trim( $text ) ) {
+		$post = get_post( $post );
+		$text = get_the_content( '', false, $post );
+
+		$text = strip_shortcodes( $text );
+		$text = excerpt_remove_blocks( $text );
+
+		/** This filter is documented in wp-includes/post-template.php */
+		$text = apply_filters( 'the_content', $text );
+		$text = str_replace( ']]><p>', ']]&gt;', $text );
+
+		/* translators: Maximum number of words used in a post excerpt. */
+		$excerpt_length = (int) _x( '55', 'excerpt_length' );
+
+		/**
+		 * Filters the maximum number of words in a post excerpt.
+		 *
+		 * @since 2.7.0
+		 *
+		 * @param int $number The maximum number of words. Default 55.
+		 */
+		$excerpt_length = (int) apply_filters( 'excerpt_length', $excerpt_length );
+
+		/**
+		 * Filters the string in the "more" link displayed after a trimmed excerpt.
+		 *
+		 * @since 2.9.0
+		 *
+		 * @param string $more_string The string shown within the more link.
+		 */
+		$excerpt_more = apply_filters( 'excerpt_more', ' ' . '[&hellip;]' );
+		$text         = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+	}
+
+	/**
+	 * Filters the trimmed excerpt string.
+	 *
+	 * @since 2.8.0
+	 *
+	 * @param string $text        The trimmed text.
+	 * @param string $raw_excerpt The text prior to trimming.
+	 */
+	return apply_filters( 'wp_trim_excerpt', $text, $raw_excerpt );
 }
+
+
+
+
+
+///// Back to regualr programming
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Custom View Article link to Post
 function html5_blank_view_article( $more ) {
@@ -390,9 +465,9 @@ add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' ); // Remove surrounding <
  add_filter( 'nav_menu_item_id', 'my_css_attributes_filter', 100, 1 ); // Remove Navigation <li> injected ID (Commented out by default)
  add_filter( 'page_css_class', 'my_css_attributes_filter', 100, 1 ); // Remove Navigation <li> Page ID's (Commented out by default)
 add_filter( 'the_category', 'remove_category_rel_from_category_list' ); // Remove invalid rel attribute
-add_filter( 'the_excerpt', 'shortcode_unautop' ); // Remove auto <p> tags in Excerpt (Manual Excerpts only)
-add_filter( 'the_excerpt', 'do_shortcode' ); // Allows Shortcodes to be executed in Excerpt (Manual Excerpts only)
-add_filter( 'excerpt_more', 'html5_blank_view_article' ); // Add 'View Article' button instead of [...] for Excerpts
+//add_filter( 'the_excerpt', 'shortcode_unautop' ); // Remove auto <p> tags in Excerpt (Manual Excerpts only)
+//add_filter( 'the_excerpt', 'do_shortcode' ); // Allows Shortcodes to be executed in Excerpt (Manual Excerpts only)
+//add_filter( 'excerpt_more', 'html5_blank_view_article' ); // Add 'View Article' button instead of [...] for Excerpts
 add_filter( 'show_admin_bar', 'remove_admin_bar' ); // Remove Admin bar
 add_filter( 'style_loader_tag', 'html5_style_remove' ); // Remove 'text/css' from enqueued stylesheet
 add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 ); // Remove width and height dynamic attributes to thumbnails
@@ -400,7 +475,10 @@ add_filter( 'post_thumbnail_html', 'remove_width_attribute', 10 ); // Remove wid
 add_filter( 'image_send_to_editor', 'remove_width_attribute', 10 ); // Remove width and height dynamic attributes to post images
 
 // Remove Filters
-remove_filter( 'the_excerpt', 'wpautop' ); // Remove <p> tags from Excerpt altogether
+//remove_filter( 'the_excerpt', 'wpautop' ); // Remove <p> tags from Excerpt altogether
+
+add_filter('get_the_excerpt', 'lt_html_excerpt');
+
 
 // Shortcodes
 add_shortcode( 'html5_shortcode_demo', 'html5_shortcode_demo' ); // You can place [html5_shortcode_demo] in Pages, Posts now.
@@ -414,41 +492,41 @@ add_shortcode( 'html5_shortcode_demo_2', 'html5_shortcode_demo_2' ); // Place [h
 \*------------------------------------*/
 
 // Create 1 Custom Post type for a Demo, called HTML5-Blank
-function create_post_type_html5() {
-    register_taxonomy_for_object_type( 'category', 'html5-blank' ); // Register Taxonomies for Category
-    register_taxonomy_for_object_type( 'post_tag', 'html5-blank' );
-    register_post_type( 'clients', // Register Custom Post Type
-        array(
-        'labels'       => array(
-            'name'               => esc_html( 'Clients', 'html5blank' ), // Rename these to suit
-            'singular_name'      => esc_html( 'Clients', 'html5blank' ),
-            'add_new'            => esc_html( 'Add New', 'html5blank' ),
-            'add_new_item'       => esc_html( 'Add New client', 'html5blank' ),
-            'edit'               => esc_html( 'Edit', 'html5blank' ),
-            'edit_item'          => esc_html( 'Edit client', 'html5blank' ),
-            'new_item'           => esc_html( 'New client', 'html5blank' ),
-            'view'               => esc_html( 'View client', 'html5blank' ),
-            'view_item'          => esc_html( 'View client', 'html5blank' ),
-            'search_items'       => esc_html( 'Search client', 'html5blank' ),
-            'not_found'          => esc_html( 'No clients found', 'html5blank' ),
-            'not_found_in_trash' => esc_html( 'No clients found in Trash', 'html5blank' ),
-        ),
-        'public'       => true,
-        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-        'has_archive'  => true,
-        'supports'     => array(
-            'title',
-            'editor',
-            'excerpt',
-            'thumbnail'
-        ), // Go to Dashboard Custom HTML5 Blank post for supports
-        'can_export'   => true, // Allows export in Tools > Export
-        'taxonomies'   => array(
-            'post_tag',
-            'category'
-        ) // Add Category and Post Tags support
-    ) );
-}
+// function create_post_type_html5() {
+//     register_taxonomy_for_object_type( 'category', 'html5-blank' ); // Register Taxonomies for Category
+//     register_taxonomy_for_object_type( 'post_tag', 'html5-blank' );
+//     register_post_type( 'clients', // Register Custom Post Type
+//         array(
+//         'labels'       => array(
+//             'name'               => esc_html( 'Clients', 'html5blank' ), // Rename these to suit
+//             'singular_name'      => esc_html( 'Clients', 'html5blank' ),
+//             'add_new'            => esc_html( 'Add New', 'html5blank' ),
+//             'add_new_item'       => esc_html( 'Add New client', 'html5blank' ),
+//             'edit'               => esc_html( 'Edit', 'html5blank' ),
+//             'edit_item'          => esc_html( 'Edit client', 'html5blank' ),
+//             'new_item'           => esc_html( 'New client', 'html5blank' ),
+//             'view'               => esc_html( 'View client', 'html5blank' ),
+//             'view_item'          => esc_html( 'View client', 'html5blank' ),
+//             'search_items'       => esc_html( 'Search client', 'html5blank' ),
+//             'not_found'          => esc_html( 'No clients found', 'html5blank' ),
+//             'not_found_in_trash' => esc_html( 'No clients found in Trash', 'html5blank' ),
+//         ),
+//         'public'       => true,
+//         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+//         'has_archive'  => true,
+//         'supports'     => array(
+//             'title',
+//             'editor',
+//             'excerpt',
+//             'thumbnail'
+//         ), // Go to Dashboard Custom HTML5 Blank post for supports
+//         'can_export'   => true, // Allows export in Tools > Export
+//         'taxonomies'   => array(
+//             'post_tag',
+//             'category'
+//         ) // Add Category and Post Tags support
+//     ) );
+// }
 
 /*------------------------------------*\
     ShortCode Functions
