@@ -3,9 +3,9 @@
 	$value = get_field( "header_blurb" );
 
 	if( $value ) {
-		echo '<div class="header-blurb">';
+		echo '<div class="header-blurb"><div class="inner">';
 		echo $value;
-		echo '</div>';
+		echo '</div></div>';
 	} 
 
 	// end header blurb
