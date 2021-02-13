@@ -2,8 +2,8 @@
 !wp-content/
 #the above does not work
 
-# wp-admin/
-# wp-includes/
+wp-admin/
+wp-includes/
 
 # ignore everything in the "wp-content" directory, except:
 # "mu-plugins", "plugins", "themes" directory
@@ -29,3 +29,5 @@ node_modules/
 .DS_Store
 .htaccess
 .cache/
+
+wp-config.php
