@@ -24,8 +24,8 @@ body {
   font-family: $font-family-base;
   font-size: $font-size-base;
   line-height: $line-height-base;
-  color: $text-color;
-  background-color: $body-bg;
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 
 img {
@@ -58,6 +58,6 @@ input[type="search"] {
 // Text selection
 ::selection {
   background-color: $selection-bg;
-  color: $body-bg;
+  color: var(--background-color);
   text-shadow: none;
 }

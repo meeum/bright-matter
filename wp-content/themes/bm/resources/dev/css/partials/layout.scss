@@ -17,5 +17,11 @@
 
   @include large {
     grid-template-columns: 1fr 1fr;
+
+    .post {
+      border: 1px solid #222;
+    }
   }
+
+  
 }
