@@ -541,3 +541,23 @@ function html5_shortcode_demo( $atts, $content = null ) {
 function html5_shortcode_demo_2( $atts, $content = null ) {
     return '<h2>' . $content . '</h2>';
 }
+
+
+
+
+
+
+
+// redirect non logged in users to temporary landing page - delete after we go live
+
+add_action( 'template_redirect', function() { // we're creating a function here so the web server knows to do something
+
+    if (!is_user_logged_in() ) { // checking to see if the user is logged in. If someone IS logged in, then everything between the curly braces {} is skipped 
+        wp_redirect( site_url( '/coming-soon' ) ); // now we've worked out the user is NOT logged in, the page will redirect to the coming soon page
+        exit();
+    }
+
+});
+// end redirect
+
+
