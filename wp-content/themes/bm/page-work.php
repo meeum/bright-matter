@@ -25,7 +25,7 @@
 
 
 
-				<?php edit_post_link(); ?>
+				<?php //edit_post_link(); ?>
 			</div>
 		</article>
 
@@ -93,6 +93,8 @@ if ( $query->have_posts() ) : ?>
 						<h2>
 							<?php the_title(); ?>
 						</h2>
+
+						
 						<!-- /post title -->
 
 
@@ -120,6 +122,22 @@ if ( $query->have_posts() ) : ?>
 						?>
 
 						<?php the_excerpt(); // Build your custom callback length in functions.php. ?>
+
+
+						<?php
+						// show tags that client has 
+						$post_tags = get_the_tags();
+ 
+						if ( $post_tags ) {
+							echo '<ul class="client-tags">';
+							foreach( $post_tags as $tag ) {
+								echo '<li>';
+							echo $tag->name . ' '; 
+							echo '</li>';
+							}
+							echo '</ul>';
+						}
+						?>
 
 
 
