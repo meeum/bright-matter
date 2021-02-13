@@ -1,11 +1,19 @@
 <!doctype html>
 
 
-<html <?php language_attributes(); ?> class=" no-js 
+<html <?php language_attributes(); ?> class=" no-js  
 	
 	<?php
+
+	// Run code only for Single post page (clients)
+	if ( is_single() && 'post' == get_post_type() ) {
+		$colour_scheme = get_field( "post_colour_scheme" );
+	} else {
+		// this is for everything else (pages)
+		$colour_scheme = get_field( "page_colour_scheme" );
+	}
 	// load colour scheme if there is one.
-	$colour_scheme = get_field( "page_colour_scheme" );
+	
 	if( $colour_scheme ) {echo $colour_scheme;} 
 
 ?>">
