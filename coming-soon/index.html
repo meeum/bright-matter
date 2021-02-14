@@ -17,6 +17,10 @@
             padding: 0;
         }
 
+        img {
+            max-width: 100%;
+        }
+
         body {
             line-height: 1.4;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -43,10 +47,33 @@
 
         header .inner {
             display: flex;
-            justify-content: space-between;
+            
             align-items: center;
-
+            flex-direction: column-reverse;
+            
         }
+
+        header img {
+            max-width: 80%;
+            margin-bottom: 20%;
+        }
+
+       
+
+        @media only screen and (min-width: 600px) {
+            header .inner {
+                
+            justify-content: space-between;
+            
+            flex-direction: row; 
+            }
+
+            header img {
+                max-width: unset;
+                margin: 0;
+            }
+        }
+
 
         main .inner p {
             font-size: 2rem;
@@ -83,8 +110,9 @@
             <a class="contact" href="mailto:test@mail.com?subject=Bright Matter website enquiry" target="new">Contact</a>
 
             <!-- <img class="logo" alt="Bright Matter" src="https://via.placeholder.com/200x100/000/fff?text=logo"> -->
-
-            <img class="logo" alt="Bright Matter" src="bright-matter-logo.png" width="300px" height="244px">
+            
+                <img class="logo" alt="Bright Matter" src="bright-matter-logo.png" width="300px" height="244px">
+           
         </section>
     </header>
 
