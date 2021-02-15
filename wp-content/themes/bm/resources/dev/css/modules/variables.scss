@@ -4,22 +4,12 @@
  */
 
 
-/**
- * Typography
- */
-
-$font-family-base: "Helvetica Neue", Helvetica, Arial, "Open Sans", sans-serif;
-$font-size-base: 18px;
-$line-height-base: 1.5;
 
 
-/**
- * Colors
- */
 
 //$text-color: #444;
 //$body-bg: #fff;
-$selection-bg: #04A4CC;
+
 
 
 
@@ -27,6 +17,22 @@ $selection-bg: #04A4CC;
 // $link-hover-color: #444;
 
 :root {
+
+
+    /**
+ * Typography
+ */
+
+--font-family-base: "Helvetica Neue", Helvetica, Arial, "Open Sans", sans-serif;
+--font-size-base: 18px;
+--line-height-base: 1.4;
+
+
+
+
+/**
+ * Colors
+ */
     // default scheme
     --text-color: #4E4B57;
     --background-color: #FFFEF6;
@@ -38,6 +44,8 @@ $selection-bg: #04A4CC;
 
     --primary-a: #E9E4A4;
     --primary-b: #8CBCC5;
+
+    --selection-bg: var(--primary-a);
 
 
 
@@ -51,16 +59,25 @@ $selection-bg: #04A4CC;
 
 
 
---wrapper-width: 1580px;
+    --wrapper-width: 1580px;
 
 
---padding-horizontal-base: 3%;
---padding-vertical-base: 0.5rem;
---margin-horizontal-base: 3%;
---margin-vertical-base: 0.5rem;
---margin-horizontal-large: 3rem;
---margin-vertical-large: 1rem;
+    --padding-horizontal-base: 3%;
+    --padding-vertical-base: 0.5rem;
+    --margin-horizontal-base: 3%;
+    --margin-vertical-base: 0.5rem;
+    --margin-horizontal-large: 3rem;
+    --margin-vertical-large: 1rem;
 }
+
+
+
+
+
+
+
+
+
 
 .scheme-01 {
     //--text-color: red;

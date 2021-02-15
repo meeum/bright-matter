@@ -12,12 +12,13 @@
 
     @include large {
       display: grid;
-      grid-template-columns: 60% 20%;
+      grid-template-columns: 60% 15%;
       grid-gap: 20%;
       align-items: center;
     }
 
     .logo {
+      padding-top: var(--margin-horizontal-large);
 
       svg {
         max-width: 100%; // same as .logo

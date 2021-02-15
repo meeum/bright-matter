@@ -7,13 +7,16 @@
  * modules/variables
  * ---
  */
-/**
- * Typography
- */
-/**
- * Colors
- */
 :root {
+  /**
+  * Typography
+  */
+  --font-family-base: "Helvetica Neue", Helvetica, Arial, "Open Sans", sans-serif;
+  --font-size-base: 18px;
+  --line-height-base: 1.4;
+  /**
+   * Colors
+   */
   --text-color: #4E4B57;
   --background-color: #FFFEF6;
   --link-color: #8CBCC5;
@@ -21,6 +24,7 @@
   --logo-stroke: var(--link-color);
   --primary-a: #E9E4A4;
   --primary-b: #8CBCC5;
+  --selection-bg: var(--primary-a);
   /**
    * Grid
    */
@@ -430,14 +434,13 @@ template {
 }
 
 html {
-  font-size: 62.5%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, "Open Sans", sans-serif;
-  font-size: 18px;
-  line-height: 1.5;
+  font-family: var(--font-family-base);
+  font-size: var(font-size-base);
+  line-height: var(line-height-base);
   color: var(--text-color);
   background-color: var(--background-color);
 }
@@ -462,7 +465,7 @@ input[type=search] {
 }
 
 ::selection {
-  background-color: #04A4CC;
+  background-color: --var(selection-bg);
   color: var(--background-color);
   text-shadow: none;
 }
@@ -517,8 +520,8 @@ input[type=search] {
 .gallery-caption {
   margin: 0;
   padding: 0 var(--padding-horizontal-base) var(--padding-vertical-base);
-  font-size: 18px;
-  line-height: 1.5;
+  font-size: var(font-size-base);
+  line-height: var(line-height-base);
 }
 
 /**
@@ -563,10 +566,13 @@ body {
 @media (min-width: 800px) {
   .header .inner {
     display: grid;
-    grid-template-columns: 60% 20%;
+    grid-template-columns: 60% 15%;
     grid-gap: 20%;
     align-items: center;
   }
+}
+.header .inner .logo {
+  padding-top: var(--margin-horizontal-large);
 }
 .header .inner .logo svg {
   max-width: 100%;
@@ -602,8 +608,15 @@ body {
     justify-content: space-between;
   }
 }
+.main-nav .menu-item {
+  font-size: 1.5rem;
+}
+.main-nav .current-menu-item a {
+  font-weight: 700;
+}
+
 .header-blurb {
-  font-size: 4rem;
+  font-size: 2.5rem;
   line-height: 1;
 }
 
