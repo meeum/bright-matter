@@ -16,17 +16,15 @@
 :root {
   --text-color: #222;
   --background-color: #FFFEF6;
-  --highlight-color: #8CBCC5;
+  --logo-stroke: var(--link-color);
+  --link-color: #8CBCC5;
   --primary-a: #E9E4A4;
   --primary-b: #8CBCC5;
-  --logo-stroke: #E3DCCD;
-  --logo-stroke: white;
 }
 
 .scheme-01 {
   --background-color: #607C88;
   --link-color: #E2B098;
-  --link-hover-color: purple;
   --primary-1: #E3DCCD;
   --primary-2: #E2B098;
 }

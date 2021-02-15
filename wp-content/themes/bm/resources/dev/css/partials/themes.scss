@@ -1,6 +1,12 @@
 // set vars
 
 body {
-    background-color: var(--background-color);
-    
+    background-color: var(--background-color);   
+}
+
+.logo-stroke {
+    stroke: var(--logo-stroke);   
+}
+.logo-fill {
+    fill: var(--logo-stroke);   
 }
