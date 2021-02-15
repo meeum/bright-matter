@@ -17,9 +17,20 @@
   --text-color: #4E4B57;
   --background-color: #FFFEF6;
   --link-color: #8CBCC5;
+  --link-hover-color: #222;
   --logo-stroke: var(--link-color);
   --primary-a: #E9E4A4;
   --primary-b: #8CBCC5;
+  /**
+   * Grid
+   */
+  --wrapper-width: 1580px;
+  --padding-horizontal-base: 3%;
+  --padding-vertical-base: 0.5rem;
+  --margin-horizontal-base: 3%;
+  --margin-vertical-base: 0.5rem;
+  --margin-horizontal-large: 3rem;
+  --margin-vertical-large: 1rem;
 }
 
 .scheme-01 {
@@ -46,9 +57,6 @@
   --link-color: #E9E4A4;
 }
 
-/**
- * Grid
- */
 /**
  * modules/mixins
  * ---
@@ -445,7 +453,7 @@ a {
 }
 a:focus, a:hover {
   text-decoration: underline;
-  color: #444;
+  color: var(--link-hover-color);
 }
 input[type=text],
 input[type=search] {
@@ -468,22 +476,22 @@ input[type=search] {
  * Alignment
  */
 .alignnone {
-  margin: 5px 15px 15px 0;
+  margin: var(--margin-vertical-base) var(--margin-horizontal-large) var(--margin-vertical-large) 0;
 }
 
 .aligncenter {
   display: block;
-  margin: 5px auto;
+  margin: var(--margin-vertical-base) auto;
 }
 
 .alignright {
   float: right;
-  margin: 5px 0 15px 15px;
+  margin: var(--margin-vertical-base) 0 var(--margin-vertical-large) var(--margin-horizontal-large);
 }
 
 .alignleft {
   float: left;
-  margin: 5px 15px 15px 0;
+  margin: var(--margin-vertical-base) var(--margin-horizontal-large) var(--margin-vertical-large) 0;
 }
 
 /**
@@ -493,7 +501,7 @@ input[type=search] {
   background: var(--background-color);
   border: thin solid #F0F0F0;
   max-width: 95%;
-  padding: 5px 5px;
+  padding: var(--padding-horizontal-base) var(--padding-vertical-base);
   text-align: center;
 }
 .wp-caption img {
@@ -508,7 +516,7 @@ input[type=search] {
 .wp-caption .wp-caption-text,
 .gallery-caption {
   margin: 0;
-  padding: 0 5px 5px;
+  padding: 0 var(--padding-horizontal-base) var(--padding-vertical-base);
   font-size: 18px;
   line-height: 1.5;
 }
@@ -564,15 +572,6 @@ body {
   max-width: 100%;
   height: auto;
 }
-@media (min-width: 800px) {
-  .header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background-color: var(--background-color);
-  }
-}
-
 /**
  * partials/nav
  * ---
@@ -613,8 +612,8 @@ body {
  * ---
  */
 .inner {
-  max-width: 1280px;
-  padding: 0 15px;
+  max-width: var(--wrapper-width);
+  padding: 0 var(--padding-horizontal-base);
   margin: 0 auto;
   position: relative;
 }
@@ -639,10 +638,6 @@ article.post {
   background-color: var(--background-color);
 }
 
-/**
- * partials/sidebar
- * ---
- */
 /**
  * partials/footer
  * ---
