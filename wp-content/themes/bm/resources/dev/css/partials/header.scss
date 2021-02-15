@@ -16,6 +16,15 @@
       grid-gap: 20%;
       align-items: center;
     }
+
+    .logo {
+
+      svg {
+        max-width: 100%; // same as .logo
+        height: auto;
+      }
+  
+    }
   }
 
   @include large {
