@@ -38,6 +38,28 @@ $selection-bg: #04A4CC;
 
     --primary-a: #E9E4A4;
     --primary-b: #8CBCC5;
+
+
+
+
+
+
+
+/**
+ * Grid
+ */
+
+
+
+--wrapper-width: 1280px;
+
+
+--padding-horizontal-base: 5px;
+--padding-vertical-base: 5px;
+--margin-horizontal-base: 5px;
+--margin-vertical-base: 5px;
+--margin-horizontal-large: 15px;
+--margin-vertical-large: 15px;
 }
 
 .scheme-01 {
@@ -67,21 +89,3 @@ $selection-bg: #04A4CC;
 }
 
 
-
-
-
-/**
- * Grid
- */
-
-
-
-$wrapper-width: 1280px;
-
-
-$padding-horizontal-base: 5px;
-$padding-vertical-base: 5px;
-$margin-horizontal-base: 5px;
-$margin-vertical-base: 5px;
-$margin-horizontal-large: 15px;
-$margin-vertical-large: 15px;

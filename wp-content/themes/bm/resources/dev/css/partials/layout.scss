@@ -5,8 +5,8 @@
 
 
 .inner {
-  max-width: $wrapper-width;
-  padding: 0 $margin-horizontal-large;
+  max-width: var(--wrapper-width);
+  padding: 0 var(--margin-horizontal-large);
   margin: 0 auto;
   position: relative;
 }

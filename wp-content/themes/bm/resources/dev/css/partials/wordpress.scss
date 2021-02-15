@@ -14,22 +14,22 @@
  */
 
 .alignnone {
-  margin: $margin-vertical-base $margin-horizontal-large $margin-vertical-large 0;
+  margin: var(--margin-vertical-base) var(--margin-horizontal-large) var(--margin-vertical-large) 0;
 }
 
 .aligncenter {
   display: block;
-  margin: $margin-vertical-base auto;
+  margin: var(--margin-vertical-base) auto;
 }
 
 .alignright {
   float: right;
-  margin: $margin-vertical-base 0 $margin-vertical-large $margin-horizontal-large;
+  margin: var(--margin-vertical-base) 0 var(--margin-vertical-large) var(--margin-horizontal-large);
 }
 
 .alignleft {
   float: left;
-  margin: $margin-vertical-base $margin-horizontal-large $margin-vertical-large 0;
+  margin: var(--margin-vertical-base) var(--margin-horizontal-large) var(--margin-vertical-large) 0;
 }
 
 
@@ -41,7 +41,7 @@
   background: var(--background-color);
   border: thin solid #F0F0F0;
   max-width: 95%;
-  padding: $padding-horizontal-base $padding-vertical-base;
+  padding: var(--padding-horizontal-base) var(--padding-vertical-base);
   text-align: center;
 
   & img {
@@ -57,7 +57,7 @@
 .wp-caption .wp-caption-text,
 .gallery-caption {
   margin: 0;
-  padding: 0 $padding-horizontal-base $padding-vertical-base;
+  padding: 0 var(--padding-horizontal-base) var(--padding-vertical-base);
   font-size: $font-size-base;
   line-height: $line-height-base;
 }
