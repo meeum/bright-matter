@@ -78,7 +78,15 @@
 					<!-- <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/resources/img/bright-matter-logo.svg" alt="Logo"
 						class="logo-img"> -->
 					
-					<?php get_template_part( 'resources/img/bright-matter-logo.svg' ); ?>
+					<?php 
+					//get_template_part( 'resources/img/bright-matter-logo.svg' )
+
+					// http://willmclean.net/adding-inline-svgs-in-wordpress/
+					
+					echo file_get_contents( get_template_directory() . '/resources/img/bright-matter-logo.svg' );
+; ?>
+
+					
 					<!-- <img src="https://via.placeholder.com/200x100/000/fff?text=logo" alt="Logo" class="logo-img" width="200px" height="100px"> -->
 
 				</a>
