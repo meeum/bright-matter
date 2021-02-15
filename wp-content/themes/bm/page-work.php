@@ -9,42 +9,44 @@
 			</h1>
 		</div>
 
-		<?php get_template_part( 'partials/header_blurb' ); ?>
+		<?php get_template_part('partials/header_blurb'); ?>
 
 
 
-		<?php if ( have_posts()) : while ( have_posts() ) : the_post(); ?>
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		<!-- article -->
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<div class="inner">
+				<!-- article -->
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<div class="inner">
 
-				<?php the_content(); ?>
+						<?php the_content(); ?>
 
-				<?php //comments_template( '', true ); // Remove if you don't want comments. ?>
-
-
-
-				<?php //edit_post_link(); ?>
-			</div>
-		</article>
+						<?php //comments_template( '', true ); // Remove if you don't want comments. 
+						?>
 
 
-		<!-- /article -->
 
-		<?php endwhile; ?>
+						<?php //edit_post_link(); 
+						?>
+					</div>
+				</article>
+
+
+				<!-- /article -->
+
+			<?php endwhile; ?>
 
 		<?php else : ?>
 
-		<!-- article -->
-		<article>
+			<!-- article -->
+			<article>
 
-			<h2>
-				<?php esc_html_e( 'Sorry, nothing to display.', 'html5blank' ); ?>
-			</h2>
+				<h2>
+					<?php esc_html_e('Sorry, nothing to display.', 'html5blank'); ?>
+				</h2>
 
-		</article>
-		<!-- /article -->
+			</article>
+			<!-- /article -->
 
 		<?php endif; ?>
 
@@ -61,44 +63,46 @@
 
 		<?php
 		$args = array(
-    'post_type'      => 'post',
-    'posts_per_page' => -1
-);
+			'post_type'      => 'post',
+			'posts_per_page' => -1
+		);
 
-$query = new WP_Query($args);
-?>
-		<div class="grid-halves">
+		$query = new WP_Query($args);
+		?>
+		<div class="grid-halves inner">
 
 			<?php
-if ( $query->have_posts() ) : ?>
+			if ($query->have_posts()) : ?>
 
-			<?php while ( $query->have_posts() ) : $query->the_post();?>
+				<?php while ($query->have_posts()) : $query->the_post(); ?>
 
-			<?php $colour_scheme = get_field( "post_colour_scheme" )?>
-
-
-			<article id="post-<?php the_ID(); ?>" <?php post_class( $colour_scheme ); ?>>
-
-				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-					<div class="inner">
-						<!-- post thumbnail -->
-						<?php if ( has_post_thumbnail() ) : // Check if thumbnail exists. ?>
-
-						<?php the_post_thumbnail( array( 120, 120 ) ); // Declare pixel size you need inside the array. ?>
-
-						<?php endif; ?>
-						<!-- /post thumbnail -->
-
-						<!-- post title -->
-						<h2>
-							<?php the_title(); ?>
-						</h2>
-
-						
-						<!-- /post title -->
+					<?php $colour_scheme = get_field("post_colour_scheme") ?>
 
 
-						<?php /*
+					<article id="post-<?php the_ID(); ?>" <?php post_class($colour_scheme); ?>>
+
+						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+							<div class="inner">
+								<!-- post thumbnail -->
+								<?php if (has_post_thumbnail()) : // Check if thumbnail exists. 
+								?>
+
+									<?php the_post_thumbnail(array(120, 120)); // Declare pixel size you need inside the array. 
+									?>
+
+								<?php endif; ?>
+								<!-- /post thumbnail -->
+
+								<!-- post title -->
+								<h2>
+									<?php the_title(); ?>
+								</h2>
+
+
+								<!-- /post title -->
+
+
+								<?php /*
 
 
 	<!-- post details -->
@@ -119,45 +123,49 @@ if ( $query->have_posts() ) : ?>
 						<!-- /post details -->
 
 						*/
-						?>
+								?>
 
-						<?php the_excerpt(); // Build your custom callback length in functions.php. ?>
-
-
-						<?php
-						// show tags that client has 
-						$post_tags = get_the_tags();
- 
-						if ( $post_tags ) {
-							echo '<ul class="client-tags">';
-							foreach( $post_tags as $tag ) {
-								echo '<li>';
-							echo $tag->name . ' '; 
-							echo '</li>';
-							}
-							echo '</ul>';
-						}
-						?>
+								<?php the_excerpt(); // Build your custom callback length in functions.php. 
+								?>
 
 
+								<?php
+								// show tags that client has 
+								$post_tags = get_the_tags();
 
-						<?php //edit_post_link(); ?>
-					</div><!-- inner -->
-				</a>
-			</article>
-			<?php endwhile; ?>
+								if ($post_tags) {
+									echo '<ul class="client-tags">';
+									foreach ($post_tags as $tag) {
+										echo '<li>';
+										echo $tag->name . ' ';
+										echo '</li>';
+									}
+									echo '</ul>';
+								}
+								?>
 
 
 
+								<?php //edit_post_link(); 
+								?>
+							</div><!-- inner -->
+						</a>
+					</article>
+				<?php endwhile; ?>
 
-			<?php else :?>
-			<?php //get_template_part( 'template-parts/content', 'none' );?>
+
+
+
+			<?php else : ?>
+				<?php //get_template_part( 'template-parts/content', 'none' );
+				?>
 			<?php endif; ?>
 
 	</section>
 	<!-- /section -->
 </main>
 
-<?php //get_sidebar(); ?>
+<?php //get_sidebar(); 
+?>
 
 <?php get_footer(); ?>
