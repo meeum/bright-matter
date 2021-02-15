@@ -27,40 +27,41 @@ $link-color: #f00;
 $link-hover-color: #444;
 
 :root {
-
     // default scheme
-    --text-color: #222;
+    --text-color: #4E4B57;
     --background-color: #FFFEF6;
-    --logo-stroke: var(--link-color);
 
     --link-color: #8CBCC5;
+    --logo-stroke: var(--link-color);
 
     --primary-a: #E9E4A4;
     --primary-b: #8CBCC5;
-    
-   
-    
 }
 
 .scheme-01 {
     //--text-color: red;
     --background-color: #607C88;
+    --text-color: #E3DCCD;
     --link-color: #E2B098;
-    
-   
-
-    --primary-1: #E3DCCD;
-    --primary-2: #E2B098;
-
-    //--logo-stroke: var(--link-color);
 }
 
 
 .scheme-02 {
-    --text-color: red;
-    --background-color: blue;
-    --link-color: green;
-    --link-hover-color: purple;
+    --text-color: #E3DCCD;
+    --background-color: #4E4B57;
+    --link-color: #E9E4A4;
+}
+
+.scheme-03 {
+    --text-color: #4E4B57;
+    --background-color: #E3DCCD;
+    --link-color: #E9E4A4;
+}
+
+.scheme-04 {
+    --text-color: #4E4B57;
+    --background-color: #8CBCC5;
+    --link-color: #E9E4A4;
 }
 
 
