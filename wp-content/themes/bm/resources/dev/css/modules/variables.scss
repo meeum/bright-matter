@@ -23,8 +23,8 @@ $selection-bg: #04A4CC;
 
 
 
-$link-color: #f00;
-$link-hover-color: #444;
+// $link-color: #f00;
+// $link-hover-color: #444;
 
 :root {
     // default scheme
@@ -32,6 +32,8 @@ $link-hover-color: #444;
     --background-color: #FFFEF6;
 
     --link-color: #8CBCC5;
+
+    --link-hover-color: #222;
     --logo-stroke: var(--link-color);
 
     --primary-a: #E9E4A4;
