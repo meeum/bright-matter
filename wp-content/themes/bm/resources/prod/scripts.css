@@ -621,17 +621,22 @@ body {
   .grid-halves {
     grid-template-columns: 1fr 1fr;
   }
-  .grid-halves .post {
+  .grid-halves .post-wrapper {
     border: 1px solid #222;
-  }
-  .grid-halves .post a {
+    background-color: var(--background-color);
+    color: var(--text-color);
     display: block;
     height: 100%;
   }
-}
-
-article.post {
-  background-color: var(--background-color);
+  .grid-halves .post-wrapper:hover {
+    text-decoration: none;
+    color: var(--background-color);
+    background-color: var(--text-color);
+    border-color: var(--text-color);
+  }
+  .grid-halves .post-wrapper:hover .client-tags li {
+    border-color: var(--background-color);
+  }
 }
 
 .client-tags {

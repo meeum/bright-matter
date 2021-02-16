@@ -3,7 +3,6 @@
  * ---
  */
 
-
 .inner {
   max-width: var(--wrapper-width);
   padding: 0 var(--padding-horizontal-base);
@@ -11,25 +10,29 @@
   position: relative;
 }
 
-
 .grid-halves {
   display: grid;
 
   @include large {
     grid-template-columns: 1fr 1fr;
 
-    .post {
+    .post-wrapper {
       border: 1px solid #222;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      display: block;
+      height: 100%;
 
-      a {
-        display: block;
-        height: 100%;
-        &:hover {
+      &:hover {
+        text-decoration: none;
+        color: var(--background-color);
+        background-color: var(--text-color);
+        border-color: var(--text-color);
 
+        .client-tags li {
+          border-color: var(--background-color);
         }
       }
     }
   }
-
-  
 }
