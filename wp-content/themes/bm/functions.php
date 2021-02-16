@@ -566,3 +566,36 @@ add_action( 'template_redirect', function() { // we're creating a function here 
 // end redirect
 
 
+
+
+
+// rename posts to clients
+
+function meeum_change_post_label() {
+    global $menu;
+    global $submenu;
+    $menu[5][0] = 'Clients';
+    $submenu['edit.php'][5][0] = 'Clients';
+    $submenu['edit.php'][10][0] = 'Add Client';
+    $submenu['edit.php'][16][0] = 'Client Tags';
+}
+function meeum_change_post_object() {
+    global $wp_post_types;
+    $labels = &$wp_post_types['post']->labels;
+    $labels->name = 'Clients';
+    $labels->singular_name = 'Client';
+    $labels->add_new = 'Add Client';
+    $labels->add_new_item = 'Add Client';
+    $labels->edit_item = 'Edit Client';
+    $labels->new_item = 'Clients';
+    $labels->view_item = 'View Clients';
+    $labels->search_items = 'Search Clients';
+    $labels->not_found = 'No Clients found';
+    $labels->not_found_in_trash = 'No Clients found in Trash';
+    $labels->all_items = 'All Clients';
+    $labels->menu_name = 'Clients';
+    $labels->name_admin_bar = 'Clients';
+}
+ 
+add_action( 'admin_menu', 'meeum_change_post_label' );
+add_action( 'init', 'meeum_change_post_object' );
