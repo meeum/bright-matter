@@ -140,15 +140,20 @@ function html5blank_styles() {
         // normalize-css
         // wp_register_style( 'normalize', get_template_directory_uri() . '/css/lib/normalize.css', array(), '7.0.0' );
 
+        // fonts because FUCK YOU PARCEL
+        wp_register_style( 'html5blankfonts', get_template_directory_uri() . '/resources/fonts.css',  '1.0' );
         // Custom CSS
         wp_register_style( 'html5blank', get_template_directory_uri() . '/resources/prod/scripts.css',  '1.0' );
 
         // Register CSS
+        wp_enqueue_style( 'html5blankfonts' );
         wp_enqueue_style( 'html5blank' );
     } else {
+        wp_register_style( 'html5blankcssfonts', get_template_directory_uri() . '/resources/fonts.css',  '1.0' );
         // Custom CSS
         wp_register_style( 'html5blankcssmin', get_template_directory_uri() . '/resources/prod/scripts.css', array(), '1.0' );
         // Register CSS
+        wp_enqueue_style( 'html5blankcssfonts' );
         wp_enqueue_style( 'html5blankcssmin' );
     }
 }
