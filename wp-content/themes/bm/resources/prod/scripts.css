@@ -634,6 +634,17 @@ article.post {
   background-color: var(--background-color);
 }
 
+.client-tags {
+  list-style: none;
+  display: flex;
+  padding: var(--padding-vertical-base) 0;
+}
+.client-tags li {
+  border: 1px solid var(--text-color);
+  padding: var(--padding-vertical-base);
+  margin-right: var(--margin-vertical-base);
+}
+
 /**
  * partials/footer
  * ---
