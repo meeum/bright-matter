@@ -4,10 +4,11 @@
  * Main `sass` file. Import here `sass` files
  */
 
+ 
 // Modules
 @import "css/modules/variables";
 @import "css/modules/mixins";
-@import "css/modules/fonts";
+//@import "css/modules/fonts";
 
 // Partials
 @import "css/partials/normalize";
