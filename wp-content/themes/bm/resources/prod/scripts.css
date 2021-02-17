@@ -24,7 +24,6 @@
   --logo-stroke: var(--link-color);
   --primary-a: #E9E4A4;
   --primary-b: #8CBCC5;
-  --selection-bg: var(--primary-a);
   /**
    * Grid
    */
@@ -445,12 +444,6 @@ input[type=text],
 input[type=search] {
   font-size: inherit;
   line-height: inherit;
-}
-
-::selection {
-  background-color: --var(selection-bg);
-  color: var(--background-color);
-  text-shadow: none;
 }
 
 /**
