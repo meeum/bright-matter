@@ -556,6 +556,12 @@ body {
   display: block;
   margin: 0 auto;
 }
+@media (min-width: 800px) {
+  .header .inner .logo svg {
+    margin: unset;
+    max-width: 100%;
+  }
+}
 /**
  * partials/nav
  * ---

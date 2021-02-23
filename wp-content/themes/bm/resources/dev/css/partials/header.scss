@@ -25,6 +25,11 @@
         height: auto;
         display: block;
         margin: 0 auto;
+
+        @include large {
+          margin: unset;
+          max-width: 100%;
+        }
       }
   
     }
