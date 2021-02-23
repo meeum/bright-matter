@@ -69,9 +69,7 @@
 					if ($post_tags) {
 						echo '<ul class="client-tags">';
 						foreach ($post_tags as $tag) {
-							// echo '<li>';
-							// echo $tag->name . ' ';
-							// echo '</li>';
+							
 							echo '<li><a class="tagged" href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a></li>';
 						}
 						echo '</ul>';
