@@ -136,9 +136,9 @@
 								if ($post_tags) {
 									echo '<ul class="client-tags">';
 									foreach ($post_tags as $tag) {
-										echo '<li>';
+										echo '<li><span class="tagged">';
 										echo $tag->name . ' ';
-										echo '</li>';
+										echo '</span></li>';
 									}
 									echo '</ul>';
 								}

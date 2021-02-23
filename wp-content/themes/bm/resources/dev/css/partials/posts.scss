@@ -19,8 +19,10 @@ article.post {
     flex-wrap: wrap;
     padding: var(--padding-vertical-base) 0;
 
-    li {
-        border: 1px solid var(--text-color);
+    .tagged {
+        color: var(--text-color);
+        background-color: var(--link-color);
+        border-radius: 1rem;
         padding: var(--padding-vertical-base);
         margin: 0 var(--margin-vertical-base) var(--margin-vertical-base) 0;
 
