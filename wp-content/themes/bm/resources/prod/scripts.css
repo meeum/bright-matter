@@ -69,6 +69,16 @@
  * modules/mixins
  * ---
  */
+@keyframes sweep {
+  0% {
+    opacity: 0;
+    margin-left: -10px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0px;
+  }
+}
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -644,8 +654,8 @@ body {
 .expandable-item {
   transition: var(--transition-time);
 }
-.expandable-item[open] {
-  background: red;
+.expandable-item[open] summary ~ * {
+  animation: sweep 0.5s ease-in-out;
 }
 
 .expandable-header {

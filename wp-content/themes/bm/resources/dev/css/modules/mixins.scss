@@ -9,6 +9,10 @@
   margin: 0;
 }
 
+@keyframes sweep {
+  0%    {opacity: 0; margin-left: -10px; }
+  100%  {opacity: 1; margin-left: 0px; }
+}
 
 // media queries - borrowed from https://itnext.io/writing-media-queries-with-sass-mixins-3ea591ea3ea4
 // @mixin mobile {

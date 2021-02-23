@@ -31,7 +31,7 @@
 
 							if ($tags) :
 								foreach ($tags as $tag) : ?>
-									<details class="expandable-item">
+									<details class="expandable-item <?php echo esc_html($tag->name); ?>">
 										<summary class="expandable-header"><?php echo ($tag->name); ?></summary>
 
 										<section class="expandable-content">
