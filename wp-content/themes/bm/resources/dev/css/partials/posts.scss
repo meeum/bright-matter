@@ -16,11 +16,16 @@ article.post {
 .client-tags {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     padding: var(--padding-vertical-base) 0;
 
     li {
         border: 1px solid var(--text-color);
         padding: var(--padding-vertical-base);
-        margin-right: var(--margin-vertical-base);
+        margin: 0 var(--margin-vertical-base) var(--margin-vertical-base) 0;
+
+        @include large {
+
+        }
     }
 }
