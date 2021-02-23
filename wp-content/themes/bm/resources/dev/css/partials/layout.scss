@@ -10,6 +10,15 @@
   position: relative;
 }
 
+.inner-inner {
+
+  @include large {
+    padding: 0 var(--padding-horizontal-base);
+    
+  }
+
+}
+
 .grid-halves {
   display: grid;
 
