@@ -49,9 +49,9 @@
     --wrapper-width: 1580px;
 
 
-    --padding-horizontal-base: 3%;
+    --padding-horizontal-base: 5%;
     --padding-vertical-base: 0.5rem;
-    --margin-horizontal-base: 3%;
+    --margin-horizontal-base: var(--padding-horizontal-base);
     --margin-vertical-base: 0.5rem;
     --margin-horizontal-large: 3rem;
     --margin-vertical-large: 1rem;

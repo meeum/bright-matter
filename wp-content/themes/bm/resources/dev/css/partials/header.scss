@@ -18,11 +18,13 @@
     }
 
     .logo {
-      padding-top: var(--margin-horizontal-large);
+      padding: var(--margin-horizontal-large) 0;
 
       svg {
-        max-width: 100%; // same as .logo
+        max-width: 80%; // same as .logo
         height: auto;
+        display: block;
+        margin: 0 auto;
       }
   
     }
