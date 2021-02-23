@@ -66,7 +66,7 @@
 
 			<!-- nav -->
 			<nav class="nav" role="navigation">
-				<button class="nav-prompt">Nav</button>
+				<!-- <button class="nav-prompt">Nav</button> -->
 				<?php html5blank_nav(); ?>
 			</nav>
 			<!-- /nav -->
