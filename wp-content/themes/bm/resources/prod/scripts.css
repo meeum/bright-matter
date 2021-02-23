@@ -27,7 +27,7 @@
   /**
    * Grid
    */
-  --wrapper-width: 1580px;
+  --wrapper-width: 1280px;
   --padding-horizontal-base: 5%;
   --padding-vertical-base: 0.5rem;
   --margin-horizontal-base: var(--padding-horizontal-base);
@@ -606,35 +606,30 @@ body {
   position: relative;
 }
 
-@media (min-width: 800px) {
-  .inner-inner {
-    padding: 0 var(--padding-horizontal-base);
-  }
-}
-
 .grid-halves {
   display: grid;
 }
 @media (min-width: 800px) {
   .grid-halves {
     grid-template-columns: 1fr 1fr;
+    max-width: 100%;
   }
-  .grid-halves .post-wrapper {
-    border: 1px solid #222;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    display: block;
-    height: 100%;
-  }
-  .grid-halves .post-wrapper:hover {
-    text-decoration: none;
-    color: var(--background-color);
-    background-color: var(--text-color);
-    border-color: var(--text-color);
-  }
-  .grid-halves .post-wrapper:hover .client-tags li {
-    border-color: var(--background-color);
-  }
+}
+.grid-halves .post-wrapper {
+  border: 1px solid #222;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: block;
+  height: 100%;
+}
+.grid-halves .post-wrapper:hover {
+  text-decoration: none;
+  color: var(--background-color);
+  background-color: var(--text-color);
+  border-color: var(--text-color);
+}
+.grid-halves .post-wrapper:hover .client-tags li {
+  border-color: var(--background-color);
 }
 
 .client-tags {

@@ -6,9 +6,9 @@
 	<?php $colour_scheme = get_field( "post_colour_scheme" )?>
 	
 	
-	<article id="post-<?php the_ID(); ?>" <?php post_class( $colour_scheme ); ?>>
-	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-
+	<article id="post-<?php the_ID(); ?>" <?php //post_class( $colour_scheme ); ?>>
+	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="post-wrapper <?php echo $colour_scheme ?>">
+	<div class="inner">
 		<!-- post thumbnail -->
 		<?php if ( has_post_thumbnail() ) : // Check if thumbnail exists. ?>
 			
@@ -45,6 +45,7 @@
 		
 
 		<?php //edit_post_link(); ?>
+	</div><!-- inner -->
 		</a>
 	</article>
 	<!-- /article -->

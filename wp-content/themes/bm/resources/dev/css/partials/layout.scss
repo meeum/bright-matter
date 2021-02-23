@@ -10,37 +10,31 @@
   position: relative;
 }
 
-.inner-inner {
 
-  @include large {
-    padding: 0 var(--padding-horizontal-base);
-    
-  }
-
-}
 
 .grid-halves {
   display: grid;
 
   @include large {
     grid-template-columns: 1fr 1fr;
+    max-width: 100%;
+  }
 
-    .post-wrapper {
-      border: 1px solid #222;
-      background-color: var(--background-color);
-      color: var(--text-color);
-      display: block;
-      height: 100%;
+  .post-wrapper {
+    border: 1px solid #222;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: block;
+    height: 100%;
 
-      &:hover {
-        text-decoration: none;
-        color: var(--background-color);
-        background-color: var(--text-color);
-        border-color: var(--text-color);
+    &:hover {
+      text-decoration: none;
+      color: var(--background-color);
+      background-color: var(--text-color);
+      border-color: var(--text-color);
 
-        .client-tags li  {
-          border-color: var(--background-color);
-        }
+      .client-tags li  {
+        border-color: var(--background-color);
       }
     }
   }
