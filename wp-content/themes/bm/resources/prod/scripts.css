@@ -14,6 +14,11 @@
   --font-family-base: "proxima_novaregular", Arial, "Open Sans", sans-serif;
   --font-size-base: 18px;
   --line-height-base: 1.4;
+  --transition-time: 0.3s;
+  --heading-huge: 3rem;
+  --heading-large: 2.5rem;
+  --heading-medium: 2rem;
+  --heading-small: 1.5rem;
   /**
    * Colors
    */
@@ -630,6 +635,28 @@ body {
 }
 .grid-halves .post-wrapper:hover .client-tags li {
   border-color: var(--background-color);
+}
+
+.expandable-table {
+  outline: none;
+}
+
+.expandable-item {
+  transition: var(--transition-time);
+}
+.expandable-item[open] {
+  background: red;
+}
+
+.expandable-header {
+  list-style: none;
+  outline: none;
+  cursor: pointer;
+  font-size: var(--heading-medium);
+  padding: var(--padding-vertical-base) 0;
+}
+.expandable-header::-webkit-details-marker {
+  display: none;
 }
 
 .client-tags {

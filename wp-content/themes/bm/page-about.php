@@ -21,27 +21,31 @@
 
 
 					<div class="inner">
-						<ul class="expandable-table">
+
+
+
+
+						<section class="expandable-table">
 							<?php
 							$tags = get_tags('post_tag'); //taxonomy=post_tag
 
 							if ($tags) :
 								foreach ($tags as $tag) : ?>
-									<li class="expandable">
-										<h2 class="expandable-header"><?php echo esc_html($tag->name); ?></h2>
+									<details class="expandable-item">
+										<summary class="expandable-header"><?php echo ($tag->name); ?></summary>
 
 										<section class="expandable-content">
-											<p><?php echo esc_html($tag->description); ?></p>
 
-											<p><a class="tag" href="<?php echo esc_url(get_tag_link($tag->term_id)); ?>" title="<?php echo esc_attr($tag->name); ?>">See our <?php echo esc_html($tag->name); ?> clients</a></p>
+											<?php echo ($tag->description); ?>
+
+											<p><a class="tag" href="<?php echo esc_url(get_tag_link($tag->term_id)); ?>" title="<?php echo ($tag->name); ?>">See our <?php echo ($tag->name); ?> clients</a></p>
+
 										</section>
-										
-										
-										
-									</li>
+
+									</details>
 								<?php endforeach; ?>
 							<?php endif; ?>
-						</ul>
+						</section>
 					</div>
 
 

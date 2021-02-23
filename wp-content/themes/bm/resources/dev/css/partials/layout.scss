@@ -39,3 +39,35 @@
     }
   }
 }
+
+// primarily for the services table on the about page
+.expandable-table {
+  outline:none;
+}
+
+.expandable-item {
+
+  transition: var(--transition-time);
+
+
+  &[open] {
+    background: red;
+  }
+}
+
+.expandable-header {
+  list-style: none;
+  outline:none;
+  cursor: pointer;
+  font-size: var(--heading-medium);
+  padding: var(--padding-vertical-base) 0;
+  
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+.expandable-content {
+
+}
