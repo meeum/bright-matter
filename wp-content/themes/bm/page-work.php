@@ -3,13 +3,11 @@
 <main role="main" aria-label="Content" data-template="page">
 	<!-- section -->
 	<section>
-		<div class="inner">
-			<h1>
-				<?php the_title(); ?>
-			</h1>
-		</div>
-
-		<?php get_template_part('partials/header_blurb'); ?>
+		<div class="header-blurb">
+			<div class="inner">
+				<h1><?php the_title(); ?></h1>
+			</div>
+		</div><!-- header-blurb-->
 
 
 

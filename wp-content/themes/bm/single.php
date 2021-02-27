@@ -23,16 +23,16 @@
 				<!--inner-->
 
 
-				<div class="inner">
-					<!-- post title -->
-					<h1>
-						<?php the_title(); ?>
-					</h1>
 
-				</div>
-				<!--inner-->
 
-				<?php get_template_part('partials/header_blurb'); ?>
+
+				<div class="header-blurb">
+					<div class="inner">
+						<h1><?php the_title(); ?></h1>
+					</div>
+				</div><!-- header-blurb-->
+
+				
 
 				<!-- /post title -->
 
@@ -69,7 +69,7 @@
 					if ($post_tags) {
 						echo '<ul class="client-tags">';
 						foreach ($post_tags as $tag) {
-							
+
 							echo '<li><a class="tagged" href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a></li>';
 						}
 						echo '</ul>';
