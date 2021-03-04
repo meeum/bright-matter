@@ -17,7 +17,7 @@
 
   @include large {
     grid-template-columns: 1fr 1fr;
-    max-width: 100%;
+    //max-width: 100%;
   }
 
   .post-wrapper {
@@ -39,6 +39,33 @@
     }
   }
 }
+
+
+// blocks on posts (client) page
+
+.blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+}
+
+.grid-block {
+  min-height: 200px;
+  padding: 0 var(--padding-horizontal-base);
+  grid-column: span 2;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.grid-block-Half-width {
+  // width: 50%;
+  // display: inline-grid;
+  // align-items: center;
+  grid-column: span 1;
+}
+
+
+
 
 // primarily for the services table on the about page
 .expandable-table {

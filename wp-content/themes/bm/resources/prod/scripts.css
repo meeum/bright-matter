@@ -32,7 +32,7 @@
   /**
    * Grid
    */
-  --wrapper-width: 1280px;
+  --wrapper-width: 1400px;
   --padding-horizontal-base: 5%;
   --padding-vertical-base: 0.5rem;
   --margin-horizontal-base: var(--padding-horizontal-base);
@@ -627,7 +627,6 @@ body {
 @media (min-width: 800px) {
   .grid-halves {
     grid-template-columns: 1fr 1fr;
-    max-width: 100%;
   }
 }
 .grid-halves .post-wrapper {
@@ -645,6 +644,23 @@ body {
 }
 .grid-halves .post-wrapper:hover .client-tags li {
   border-color: var(--background-color);
+}
+
+.blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-block {
+  min-height: 200px;
+  padding: 0 var(--padding-horizontal-base);
+  grid-column: span 2;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.grid-block-Half-width {
+  grid-column: span 1;
 }
 
 .expandable-table {

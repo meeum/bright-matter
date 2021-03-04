@@ -32,7 +32,7 @@
 					</div>
 				</div><!-- header-blurb-->
 
-				
+
 
 				<!-- /post title -->
 
@@ -96,6 +96,40 @@
 					*/
 				?>
 
+				
+<?php
+	if( have_rows('blocks') ):
+
+		echo '<div class="blocks inner">';
+
+		// Loop through rows.
+		while( have_rows('blocks') ) : the_row();
+			
+			// Load sub field value.
+			$block_colour_scheme = get_sub_field('colour_scheme');
+			$block_size = get_sub_field('block_size');
+			$block_content = get_sub_field('block_content');
+			// Do something...
+
+			
+				
+				echo '<div class="grid-block  grid-block-'.$block_size.' '.$block_colour_scheme.'">';
+				echo $block_content;
+				echo '</div>';
+
+		
+
+		
+	
+		// End loop.
+		endwhile;
+	
+		echo '</div><!-- blocks-->';
+	// No value.
+	else :
+		// Do something...
+	endif;
+?>
 			</article>
 			<!-- /article -->
 
